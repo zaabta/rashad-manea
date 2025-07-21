@@ -1,0 +1,226 @@
+'use client'
+
+import { useState } from 'react'
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react'
+import { contactInfo } from '@/data'
+
+/**
+ * Contact section component                    placeholder="Tell me about the teaching opportunity or what you'd like to discuss..."
+ * Provides contact information and a contact form
+ */
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  })
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Here you would typically send the form data to your backend or email service
+    console.log('Form submitted:', formData)
+    alert('Thank you for your message! I\'ll get back to you soon.')
+    // Reset form
+    setFormData({ name: '', email: '', subject: '', message: '' })
+  }
+
+  return (
+    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800/50">
+      <div className="container-max-width section-padding">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Get In <span className="gradient-text">Touch</span>
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            Looking for a dedicated educator? I&apos;d love to discuss teaching opportunities and educational collaborations!
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Contact Information */}
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-2xl font-semibold mb-6">Let&apos;s Connect</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+                I&apos;m always interested in new teaching opportunities, educational collaborations, 
+                and professional development initiatives. Whether it&apos;s a full-time position, 
+                substitute teaching, or curriculum consulting, feel free to reach out!
+              </p>
+            </div>
+
+            {/* Contact Details */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-primary-100 dark:bg-primary-900 rounded-xl">
+                  <Mail className="text-primary-600 dark:text-primary-400" size={24} />
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-900 dark:text-gray-100">Email</h4>
+                  <a
+                    href={`mailto:${contactInfo.email}`}
+                    className="text-primary-600 dark:text-primary-400 hover:underline"
+                  >
+                    {contactInfo.email}
+                  </a>
+                </div>
+              </div>
+
+              {contactInfo.phone && (
+                <div className="flex items-center gap-4">
+                  <div className="p-3 bg-primary-100 dark:bg-primary-900 rounded-xl">
+                    <Phone className="text-primary-600 dark:text-primary-400" size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-900 dark:text-gray-100">Phone</h4>
+                    <a
+                      href={`tel:${contactInfo.phone}`}
+                      className="text-primary-600 dark:text-primary-400 hover:underline"
+                    >
+                      {contactInfo.phone}
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-primary-100 dark:bg-primary-900 rounded-xl">
+                  <MapPin className="text-primary-600 dark:text-primary-400" size={24} />
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-900 dark:text-gray-100">Location</h4>
+                  <span className="text-gray-600 dark:text-gray-400">{contactInfo.location}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div>
+              <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-4">Follow Me</h4>
+              <div className="flex gap-4">
+                {contactInfo.github && (
+                  <a
+                    href={contactInfo.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                  >
+                    <Github className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400" size={24} />
+                  </a>
+                )}
+                {contactInfo.linkedin && (
+                  <a
+                    href={contactInfo.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                  >
+                    <Linkedin className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400" size={24} />
+                  </a>
+                )}
+                {contactInfo.twitter && (
+                  <a
+                    href={contactInfo.twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                  >
+                    <Twitter className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400" size={24} />
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg">
+            <h3 className="text-xl font-semibold mb-6">Send Me a Message</h3>
+            
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-800 dark:text-gray-100 transition-all"
+                    placeholder="Your full name"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-800 dark:text-gray-100 transition-all"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  Subject *
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-800 dark:text-gray-100 transition-all"
+                  placeholder="What's this about?"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  Message *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                  rows={6}
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-800 dark:text-gray-100 transition-all resize-none"
+                  placeholder="Tell me about your project or what you'd like to discuss..."
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full btn-primary flex items-center justify-center gap-2"
+              >
+                <Send size={18} />
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
