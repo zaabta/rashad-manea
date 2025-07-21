@@ -2,13 +2,15 @@
 
 import { useState } from 'react'
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react'
+import { useTranslation } from '@/contexts/I18nContext'
 import { contactInfo } from '@/data'
 
 /**
- * Contact section component                    placeholder="Tell me about the teaching opportunity or what you'd like to discuss..."
+ * Contact section component with i18n support
  * Provides contact information and a contact form
  */
 export default function Contact() {
+  const { t } = useTranslation()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -38,10 +40,10 @@ export default function Contact() {
       <div className="container-max-width section-padding">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Get In <span className="gradient-text">Touch</span>
+            {t('contact.title')}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Looking for a dedicated educator? I&apos;d love to discuss teaching opportunities and educational collaborations!
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -158,7 +160,7 @@ export default function Contact() {
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-800 dark:text-gray-100 transition-all"
-                    placeholder="Your full name"
+                    placeholder={t('contact.namePlaceholder')}
                   />
                 </div>
                 <div>
@@ -173,7 +175,7 @@ export default function Contact() {
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-800 dark:text-gray-100 transition-all"
-                    placeholder="your.email@example.com"
+                    placeholder={t('contact.emailPlaceholder')}
                   />
                 </div>
               </div>
@@ -206,7 +208,7 @@ export default function Contact() {
                   required
                   rows={6}
                   className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-800 dark:text-gray-100 transition-all resize-none"
-                  placeholder="Tell me about your project or what you'd like to discuss..."
+                  placeholder={t('contact.messagePlaceholder')}
                 />
               </div>
 
@@ -215,7 +217,7 @@ export default function Contact() {
                 className="w-full btn-primary flex items-center justify-center gap-2"
               >
                 <Send size={18} />
-                Send Message
+                {t('contact.send')}
               </button>
             </form>
           </div>

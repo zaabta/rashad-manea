@@ -1,22 +1,24 @@
 'use client'
 
 import { User, Heart, Coffee, Code } from 'lucide-react'
+import { useTranslation } from '@/contexts/I18nContext'
 import { personalInfo, education } from '@/data'
 
 /**
- * About section component
+ * About section component with i18n support
  * Personal introduction and education background
  */
 export default function About() {
+  const { t } = useTranslation()
   return (
     <section id="about" className="py-20 bg-gray-50 dark:bg-gray-800/50">
       <div className="container-max-width section-padding">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            About <span className="gradient-text">Me</span>
+            {t('about.title')}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Get to know more about my background, interests, and what drives me as a developer.
+            {t('about.subtitle')}
           </p>
         </div>
 
@@ -32,13 +34,10 @@ export default function About() {
               </div>
               <div className="prose dark:prose-invert max-w-none">
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                  {personalInfo.bio}
+                  {t('about.intro')}
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  When I&apos;m not in the classroom, you can find me developing new teaching resources, 
-                  attending educational conferences, or volunteering in community education programs. I believe in 
-                  lifelong learning and staying current with educational research and best practices to continuously 
-                  improve my teaching effectiveness.
+                  {t('about.approach')}
                 </p>
               </div>
             </div>

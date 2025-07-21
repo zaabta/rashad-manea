@@ -1,13 +1,15 @@
 'use client'
 
 import { Heart, ArrowUp } from 'lucide-react'
+import { useTranslation } from '@/contexts/I18nContext'
 import { personalInfo, contactInfo } from '@/data'
 
 /**
- * Footer component
+ * Footer component with i18n support
  * Provides site footer with links and copyright information
  */
 export default function Footer() {
+  const { t } = useTranslation()
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -138,9 +140,12 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-gray-800 pt-6 pb-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2 text-gray-300">
-            <span>© {currentYear} {personalInfo.name}. Made with</span>
+            <span>© {currentYear} {personalInfo.name}. {t('footer.rights')}</span>
             <Heart className="text-red-500" size={16} />
-            <span>using Next.js & Tailwind CSS</span>
+          </div>
+          
+          <div className="text-gray-300 text-sm">
+            {t('footer.tagline')}
           </div>
           
           {/* Back to top button */}

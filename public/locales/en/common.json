@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Passionate Educator & Learning Facilitator",
+    "subtitle": "Inspiring minds and fostering growth through innovative teaching methods",
+    "cta": "View My Work"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Dedicated to transforming education through innovative teaching methods",
+    "intro": "With over 8 years of experience in education, I am passionate about creating inclusive learning environments that inspire students to reach their full potential. My teaching philosophy centers on student-centered learning, differentiated instruction, and the integration of technology to enhance educational outcomes.",
+    "philosophy": "Teaching Philosophy",
+    "philosophyText": "I believe that every student has unique strengths and learning styles. My approach focuses on creating engaging, interactive lessons that cater to diverse learning needs while fostering critical thinking and creativity.",
+    "approach": "My Approach",
+    "approachText": "I integrate modern pedagogical techniques with traditional teaching methods, utilizing technology and hands-on activities to create meaningful learning experiences that prepare students for the 21st century."
+  },
+  "skills": {
+    "title": "Teaching Skills & Expertise",
+    "subtitle": "Core competencies that drive effective education"
+  },
+  "projects": {
+    "title": "Educational Projects & Achievements",
+    "subtitle": "Innovative teaching initiatives and curriculum development"
+  },
+  "experience": {
+    "title": "Teaching Experience",
+    "subtitle": "Professional journey in education"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Ready to make a difference in education together",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "your.email@example.com",
+    "messagePlaceholder": "Tell me about your educational needs or opportunities...",
+    "send": "Send Message"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "tagline": "Building bridges to knowledge and success."
+  },
+  "language": {
+    "english": "English",
+    "chinese": "中文",
+    "french": "Français"
+  },
+  "data": {
+    "teachingPhilosophy": "Student-centered learning with differentiated instruction and technology integration",
+    "teachingApproach": "Creating engaging, interactive lessons that foster critical thinking and creativity"
+  }
+}

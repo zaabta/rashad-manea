@@ -1,14 +1,17 @@
 'use client'
 
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
+import { useTranslation } from '@/contexts/I18nContext'
 import { personalInfo, contactInfo } from '@/data'
 import Image from 'next/image'
 
 /**
- * Hero section component
+ * Hero section component with i18n support
  * Main landing section with introduction and call-to-action
  */
 export default function Hero() {
+  const { t } = useTranslation()
+  
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -38,19 +41,19 @@ export default function Hero() {
                 <span className="gradient-text">{personalInfo.name}</span>
               </h1>
               <h3 className="text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-400 font-medium mb-6">
-                {personalInfo.title}
+                {t('hero.title')}
               </h3>
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-2xl leading-relaxed">
-                {personalInfo.bio}
+                {t('hero.subtitle')}
               </p>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
                 <a href="#projects" className="btn-primary">
-                  View My Work
+                  {t('hero.cta')}
                 </a>
                 <a href="#contact" className="btn-secondary">
-                  Discuss Opportunities
+                  {t('contact.title')}
                 </a>
               </div>
 

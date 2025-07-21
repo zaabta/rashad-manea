@@ -1,0 +1,52 @@
+{
+  "nav": {
+    "about": "关于我",
+    "skills": "技能",
+    "projects": "项目",
+    "experience": "经验",
+    "contact": "联系"
+  },
+  "hero": {
+    "title": "充满激情的教育工作者与学习促进者",
+    "subtitle": "通过创新教学方法启发心智，促进成长",
+    "cta": "查看我的作品"
+  },
+  "about": {
+    "title": "关于我",
+    "subtitle": "致力于通过创新教学方法变革教育",
+    "intro": "拥有8年以上的教育经验，我热衷于创造包容性的学习环境，激励学生发挥其全部潜力。我的教学理念以学生为中心，注重差异化教学，并整合技术来提升教育成果。",
+    "philosophy": "教学理念",
+    "philosophyText": "我相信每个学生都有独特的优势和学习方式。我的方法专注于创造引人入胜的互动课程，满足多样化的学习需求，同时培养批判性思维和创造力。",
+    "approach": "我的方法",
+    "approachText": "我将现代教学技术与传统教学方法相结合，利用技术和实践活动创造有意义的学习体验，为学生适应21世纪做好准备。"
+  },
+  "skills": {
+    "title": "教学技能与专长",
+    "subtitle": "推动有效教育的核心能力"
+  },
+  "projects": {
+    "title": "教育项目与成就",
+    "subtitle": "创新教学倡议和课程开发"
+  },
+  "experience": {
+    "title": "教学经验",
+    "subtitle": "教育领域的职业历程"
+  },
+  "contact": {
+    "title": "联系我",
+    "subtitle": "准备好一起在教育领域发挥作用",
+    "namePlaceholder": "您的姓名",
+    "emailPlaceholder": "your.email@example.com",
+    "messagePlaceholder": "告诉我您的教育需求或机会...",
+    "send": "发送消息"
+  },
+  "footer": {
+    "rights": "版权所有。",
+    "tagline": "架起通往知识与成功的桥梁。"
+  },
+  "language": {
+    "english": "English",
+    "chinese": "中文",
+    "french": "Français"
+  }
+}

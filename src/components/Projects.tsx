@@ -2,14 +2,16 @@
 
 import { useState } from 'react'
 import { ExternalLink, Github, Filter } from 'lucide-react'
+import { useTranslation } from '@/contexts/I18nContext'
 import { projects } from '@/data'
 import Image from 'next/image'
 
 /**
- * Projects section component
+ * Projects section component with i18n support
  * Showcases portfolio projects with filtering and detailed information
  */
 export default function Projects() {
+  const { t } = useTranslation()
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
 
   // Get unique categories
@@ -32,10 +34,10 @@ export default function Projects() {
       <div className="container-max-width section-padding">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            My <span className="gradient-text">Projects</span>
+            {t('projects.title')}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Educational initiatives and projects that showcase my commitment to innovative teaching and student success.
+            {t('projects.subtitle')}
           </p>
         </div>
 

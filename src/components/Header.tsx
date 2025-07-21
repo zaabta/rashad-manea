@@ -2,27 +2,28 @@
 
 import { useState, useEffect } from 'react'
 import { Menu, X, Download } from 'lucide-react'
+import { useTranslation } from '@/contexts/I18nContext'
 import { personalInfo } from '@/data'
+import LanguageSwitcher from './LanguageSwitcher'
 
 /**
- * Navigation menu items
- */
-const navItems = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Contact', href: '#contact' },
-]
-
-/**
- * Header component with responsive navigation
- * Includes mobile menu and scroll-based styling
+ * Header component with responsive navigation and i18n support
+ * Includes mobile menu, scroll-based styling, and language switcher
  */
 export default function Header() {
+  const { t } = useTranslation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+
+  // Navigation menu items with translations
+  const navItems = [
+    { label: 'Home', href: '#home' },
+    { label: t('nav.about'), href: '#about' },
+    { label: t('nav.skills'), href: '#skills' },
+    { label: t('nav.projects'), href: '#projects' },
+    { label: t('nav.experience'), href: '#experience' },
+    { label: t('nav.contact'), href: '#contact' },
+  ]
 
   // Handle scroll effect for header styling
   useEffect(() => {
@@ -68,6 +69,9 @@ export default function Header() {
               </a>
             ))}
             
+            {/* Language Switcher */}
+            <LanguageSwitcher />
+            
             {/* Resume Download Button */}
             {personalInfo.resume && (
               <a
@@ -106,6 +110,11 @@ export default function Header() {
                   {item.label}
                 </a>
               ))}
+              
+              {/* Mobile Language Switcher */}
+              <div className="py-3 border-t border-gray-200 dark:border-gray-700 mt-3">
+                <LanguageSwitcher />
+              </div>
               
               {/* Mobile Resume Button */}
               {personalInfo.resume && (

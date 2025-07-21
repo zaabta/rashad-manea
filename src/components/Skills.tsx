@@ -1,13 +1,15 @@
 'use client'
 
 import { skills } from '@/data'
+import { useTranslation } from '@/contexts/I18nContext'
 import { Code, Database, Server, Wrench } from 'lucide-react'
 
 /**
- * Skills section component
+ * Skills section component with i18n support
  * Displays technical skills organized by category with progress bars
  */
 export default function Skills() {
+  const { t } = useTranslation()
   // Group skills by category
   const skillsByCategory = skills.reduce((acc, skill) => {
     if (!acc[skill.category]) {
@@ -31,10 +33,10 @@ export default function Skills() {
       <div className="container-max-width section-padding">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            My <span className="gradient-text">Skills</span>
+            {t('skills.title')}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            A comprehensive overview of my technical expertise and proficiency levels.
+            {t('skills.subtitle')}
           </p>
         </div>
 

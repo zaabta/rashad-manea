@@ -1,0 +1,52 @@
+{
+  "nav": {
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "experience": "Expérience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Éducateur Passionné & Facilitateur d'Apprentissage",
+    "subtitle": "Inspirer les esprits et favoriser la croissance grâce à des méthodes d'enseignement innovantes",
+    "cta": "Voir Mon Travail"
+  },
+  "about": {
+    "title": "À Propos de Moi",
+    "subtitle": "Dédié à transformer l'éducation grâce à des méthodes d'enseignement innovantes",
+    "intro": "Avec plus de 8 ans d'expérience dans l'éducation, je suis passionné par la création d'environnements d'apprentissage inclusifs qui inspirent les étudiants à atteindre leur plein potentiel. Ma philosophie d'enseignement se centre sur l'apprentissage centré sur l'étudiant, l'instruction différenciée, et l'intégration de la technologie pour améliorer les résultats éducatifs.",
+    "philosophy": "Philosophie d'Enseignement",
+    "philosophyText": "Je crois que chaque étudiant a des forces uniques et des styles d'apprentissage. Mon approche se concentre sur la création de leçons engageantes et interactives qui répondent aux besoins d'apprentissage divers tout en favorisant la pensée critique et la créativité.",
+    "approach": "Mon Approche",
+    "approachText": "J'intègre les techniques pédagogiques modernes avec les méthodes d'enseignement traditionnelles, utilisant la technologie et les activités pratiques pour créer des expériences d'apprentissage significatives qui préparent les étudiants pour le 21ème siècle."
+  },
+  "skills": {
+    "title": "Compétences & Expertise Pédagogiques",
+    "subtitle": "Compétences clés qui favorisent une éducation efficace"
+  },
+  "projects": {
+    "title": "Projets Éducatifs & Réalisations",
+    "subtitle": "Initiatives d'enseignement innovantes et développement de programmes"
+  },
+  "experience": {
+    "title": "Expérience d'Enseignement",
+    "subtitle": "Parcours professionnel dans l'éducation"
+  },
+  "contact": {
+    "title": "Contactez-Moi",
+    "subtitle": "Prêt à faire une différence dans l'éducation ensemble",
+    "namePlaceholder": "Votre Nom",
+    "emailPlaceholder": "votre.email@exemple.com",
+    "messagePlaceholder": "Parlez-moi de vos besoins éducatifs ou opportunités...",
+    "send": "Envoyer le Message"
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "tagline": "Construire des ponts vers la connaissance et le succès."
+  },
+  "language": {
+    "english": "English",
+    "chinese": "中文",
+    "french": "Français"
+  }
+}

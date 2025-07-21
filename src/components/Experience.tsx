@@ -1,22 +1,25 @@
 'use client'
 
 import { Calendar, MapPin, Building } from 'lucide-react'
+import { useTranslation } from '@/contexts/I18nContext'
 import { experience } from '@/data'
 
 /**
- * Experience section component
+ * Experience section component with i18n support
  * Displays work experience in a timeline format
  */
 export default function Experience() {
+  const { t } = useTranslation()
+  
   return (
     <section id="experience" className="py-20">
       <div className="container-max-width section-padding">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Work <span className="gradient-text">Experience</span>
+            {t('experience.title')}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            My professional journey and the roles that have shaped my expertise in software development.
+            {t('experience.subtitle')}
           </p>
         </div>
 
