@@ -6,7 +6,7 @@ import { useTranslation } from '@/contexts/I18nContext'
 
 /**
  * Language switcher component that allows users to change the site language
- * Supports English, Chinese (Simplified), and French
+ * Supports English and Arabic
  */
 export default function LanguageSwitcher() {
   const { language, t, changeLanguage } = useTranslation()
@@ -14,13 +14,12 @@ export default function LanguageSwitcher() {
 
   const languages = [
     { code: 'en', name: t('language.english'), flag: '🇺🇸' },
-    { code: 'zh', name: t('language.chinese'), flag: '🇨🇳' },
-    { code: 'fr', name: t('language.french'), flag: '🇫🇷' },
+    { code: 'ar', name: t('language.arabic'), flag: '🇸🇦' },
   ] as const
 
   const currentLanguage = languages.find(lang => lang.code === language)
 
-  const handleLanguageChange = (locale: 'en' | 'zh' | 'fr') => {
+  const handleLanguageChange = (locale: 'en' | 'ar') => {
     changeLanguage(locale)
     setIsOpen(false)
   }

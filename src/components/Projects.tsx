@@ -1,10 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { ExternalLink, Github, Filter } from 'lucide-react'
+import { Briefcase, Filter } from 'lucide-react'
 import { useTranslation } from '@/contexts/I18nContext'
 import { projects } from '@/data'
-import Image from 'next/image'
 
 /**
  * Projects section component with i18n support
@@ -15,7 +14,7 @@ export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
 
   // Get unique categories
-  const categories = ['all', ...Array.from(new Set(projects.map(p => p.category)))]
+  const categories = ['all']
 
   // Filter projects based on selected category
   const filteredProjects = selectedCategory === 'all' 
@@ -55,7 +54,7 @@ export default function Projects() {
             >
               <div className="flex items-center gap-2">
                 <Filter size={16} />
-                {category.charAt(0).toUpperCase() + category.slice(1)}
+                {category === 'all' ? t('ui.allServices') : category}
               </div>
             </button>
           ))}
@@ -66,26 +65,21 @@ export default function Projects() {
           {sortedProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg card-hover"
+              className="relative bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg card-hover"
             >
               {/* Featured Badge */}
               {project.featured && (
                 <div className="absolute top-4 left-4 z-10">
                   <span className="bg-accent-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    Featured
+                    {t('ui.consultingService')}
                   </span>
                 </div>
               )}
 
-              {/* Project Image */}
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-500 hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              {/* Service visual */}
+              <div className="relative h-40 overflow-hidden bg-primary-900 flex items-center justify-center">
+                <Briefcase className="text-accent-400" size={56} strokeWidth={1.2} />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-900/10 to-accent-900/30" />
               </div>
 
               {/* Project Content */}
@@ -109,31 +103,6 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {/* Project Links */}
-                <div className="flex gap-4">
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors"
-                    >
-                      <ExternalLink size={16} />
-                      View Details
-                    </a>
-                  )}
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 font-medium transition-colors"
-                    >
-                      <Github size={16} />
-                      Resources
-                    </a>
-                  )}
-                </div>
               </div>
             </div>
           ))}
@@ -143,7 +112,7 @@ export default function Projects() {
         {sortedProjects.length === 0 && (
           <div className="text-center py-12">
             <p className="text-gray-500 dark:text-gray-400">
-              No projects found in this category.
+              {t('ui.noServices')}
             </p>
           </div>
         )}
@@ -152,13 +121,13 @@ export default function Projects() {
         <div className="text-center mt-12">
           <div className="bg-gradient-to-r from-primary-600 to-accent-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-semibold mb-4">
-              Interested in Collaboration?
+              {t('ui.consultationPartner')}
             </h3>
             <p className="mb-6 text-primary-100">
-              I&apos;m always excited to collaborate with fellow educators and contribute to educational initiatives.
+              {t('ui.consultationText')}
             </p>
             <a href="#contact" className="btn-secondary bg-white text-primary-600 hover:bg-gray-100">
-              Let&apos;s Connect
+              {t('ui.requestConsultation')}
             </a>
           </div>
         </div>

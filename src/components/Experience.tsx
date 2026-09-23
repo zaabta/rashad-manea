@@ -27,12 +27,12 @@ export default function Experience() {
           {/* Timeline */}
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary-400 to-accent-400"></div>
+            <div className="absolute right-2 top-0 bottom-0 w-px bg-gradient-to-b from-primary-400 to-accent-400"></div>
 
             {experience.map((job, index) => (
-              <div key={job.id} className="relative pl-20 pb-12 last:pb-0">
+              <div key={job.id} className="relative pr-8 pb-8 sm:pr-20 sm:pb-12 last:pb-0">
                 {/* Timeline dot */}
-                <div className="absolute left-6 top-2 w-4 h-4 bg-primary-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg"></div>
+                <div className="absolute right-0.5 top-2 w-4 h-4 bg-primary-500 rounded-full border-4 border-white dark:border-gray-900 shadow-lg"></div>
 
                 {/* Experience card */}
                 <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg card-hover">
@@ -49,7 +49,7 @@ export default function Experience() {
                       <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
                         <div className="flex items-center gap-1">
                           <Calendar size={14} />
-                          {job.startDate} - {job.endDate || 'Present'}
+                          {job.startDate}{job.endDate ? ` - ${job.endDate}` : ` - ${t('ui.present')}`}
                         </div>
                         <div className="flex items-center gap-1">
                           <MapPin size={14} />
@@ -59,7 +59,7 @@ export default function Experience() {
                     </div>
                     <div className="flex-shrink-0">
                       <span className="bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 px-3 py-1 rounded-full text-sm font-medium capitalize">
-                        {job.type.replace('-', ' ')}
+                        {job.type === 'contract' ? t('ui.contract') : t('ui.executiveType')}
                       </span>
                     </div>
                   </div>
@@ -72,7 +72,7 @@ export default function Experience() {
                   {/* Key Responsibilities */}
                   <div className="mb-6">
                     <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                      Key Responsibilities & Achievements
+                      {t('ui.responsibilities')}
                     </h4>
                     <ul className="space-y-2">
                       {job.responsibilities.map((responsibility, idx) => (
@@ -89,7 +89,7 @@ export default function Experience() {
                   {/* Technologies */}
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                      Technologies Used
+                      {t('ui.workAreas')}
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {job.technologies.map((tech) => (
@@ -110,23 +110,23 @@ export default function Experience() {
 
         {/* Career Highlights */}
         <div className="mt-16 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
-          <h3 className="text-2xl font-semibold text-center mb-8">Career Highlights</h3>
+          <h3 className="text-2xl font-semibold text-center mb-8">{t('ui.careerHighlights')}</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">5+</div>
-              <div className="text-gray-600 dark:text-gray-400">Years Teaching</div>
+              <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">+30</div>
+              <div className="text-gray-600 dark:text-gray-400">{t('ui.leadershipYears')}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-accent-600 dark:text-accent-400 mb-2">500+</div>
-              <div className="text-gray-600 dark:text-gray-400">Students Taught</div>
+              <div className="text-gray-600 dark:text-gray-400">{t('ui.trainedShort')}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">15+</div>
-              <div className="text-gray-600 dark:text-gray-400">Curriculum Projects</div>
+              <div className="text-gray-600 dark:text-gray-400">{t('ui.reportsShort')}</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-accent-600 dark:text-accent-400 mb-2">95%</div>
-              <div className="text-gray-600 dark:text-gray-400">Student Success Rate</div>
+              <div className="text-3xl font-bold text-accent-600 dark:text-accent-400 mb-2">+6</div>
+              <div className="text-gray-600 dark:text-gray-400">{t('ui.internationalCompliance')}</div>
             </div>
           </div>
         </div>

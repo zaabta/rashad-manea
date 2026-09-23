@@ -24,11 +24,10 @@ export default function Footer() {
           {/* Brand & Description */}
           <div className="space-y-4">
             <h3 className="text-xl font-bold gradient-text">
-              {personalInfo.name}
+              {t('ui.name')}
             </h3>
             <p className="text-gray-300 leading-relaxed">
-              {personalInfo.title} passionate about creating innovative solutions 
-              and building exceptional user experiences.
+              {personalInfo.bio}
             </p>
             <div className="flex space-x-4">
               {contactInfo.github && (
@@ -75,36 +74,36 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Quick Links</h4>
+            <h4 className="text-lg font-semibold">{t('ui.quickLinks')}</h4>
             <ul className="space-y-2">
               <li>
                 <a href="#home" className="text-gray-300 hover:text-white transition-colors">
-                  Home
+                  {t('nav.home')}
                 </a>
               </li>
               <li>
                 <a href="#about" className="text-gray-300 hover:text-white transition-colors">
-                  About
+                  {t('nav.about')}
                 </a>
               </li>
               <li>
                 <a href="#skills" className="text-gray-300 hover:text-white transition-colors">
-                  Skills
+                  {t('nav.skills')}
                 </a>
               </li>
               <li>
                 <a href="#projects" className="text-gray-300 hover:text-white transition-colors">
-                  Projects
+                  {t('nav.projects')}
                 </a>
               </li>
               <li>
                 <a href="#experience" className="text-gray-300 hover:text-white transition-colors">
-                  Experience
+                  {t('nav.experience')}
                 </a>
               </li>
               <li>
                 <a href="#contact" className="text-gray-300 hover:text-white transition-colors">
-                  Contact
+                  {t('nav.contact')}
                 </a>
               </li>
             </ul>
@@ -112,7 +111,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Get In Touch</h4>
+            <h4 className="text-lg font-semibold">{t('ui.contactDetails')}</h4>
             <div className="space-y-2 text-gray-300">
               <p>
                 <a 
@@ -140,7 +139,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-gray-800 pt-6 pb-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2 text-gray-300">
-            <span>© {currentYear} {personalInfo.name}. {t('footer.rights')}</span>
+            <span>© 2024 {t('ui.name')}. {t('footer.rights')}</span>
             <Heart className="text-red-500" size={16} />
           </div>
           
@@ -154,7 +153,7 @@ export default function Footer() {
             className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors group"
             aria-label="Back to top"
           >
-            <span>Back to top</span>
+            <span>{t('ui.backTop')}</span>
             <ArrowUp size={16} className="group-hover:translate-y-[-2px] transition-transform" />
           </button>
         </div>

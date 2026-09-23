@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,10 +6,18 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    color-scheme: light;
+    direction: rtl;
   }
   
   body {
-    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+    @apply bg-slate-50 text-slate-900;
+    font-family: 'Cairo', sans-serif;
+    background-image: radial-gradient(circle at 12% 8%, rgba(154, 123, 56, 0.08), transparent 28rem);
+  }
+
+  ::selection {
+    @apply bg-accent-500/30 text-primary-900;
   }
 }
 
@@ -23,18 +31,18 @@
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-900 to-accent-600 bg-clip-text text-transparent;
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-xl hover:shadow-black/30 hover:-translate-y-1;
   }
   
   .btn-primary {
-    @apply bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105;
+    @apply bg-primary-900 hover:bg-primary-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105;
   }
   
   .btn-secondary {
-    @apply bg-white dark:bg-gray-800 border-2 border-primary-600 text-primary-600 dark:text-primary-400 font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:bg-primary-600 hover:text-white;
+    @apply bg-transparent border-2 border-accent-600 text-primary-900 font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:bg-accent-600 hover:text-white;
   }
 }

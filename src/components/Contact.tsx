@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react'
 import { useTranslation } from '@/contexts/I18nContext'
 import { contactInfo } from '@/data'
+import DownloadCvButton from '@/components/ui/DownloadCvButton'
 
 /**
  * Contact section component with i18n support
@@ -30,7 +31,7 @@ export default function Contact() {
     e.preventDefault()
     // Here you would typically send the form data to your backend or email service
     console.log('Form submitted:', formData)
-    alert('Thank you for your message! I\'ll get back to you soon.')
+    alert(t('ui.thankYou'))
     // Reset form
     setFormData({ name: '', email: '', subject: '', message: '' })
   }
@@ -51,11 +52,9 @@ export default function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">Let&apos;s Connect</h3>
+              <h3 className="text-2xl font-semibold mb-6">{t('ui.executive')}</h3>
               <p className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-                I&apos;m always interested in new teaching opportunities, educational collaborations, 
-                and professional development initiatives. Whether it&apos;s a full-time position, 
-                substitute teaching, or curriculum consulting, feel free to reach out!
+                {t('ui.contactIntro')}
               </p>
             </div>
 
@@ -66,7 +65,7 @@ export default function Contact() {
                   <Mail className="text-primary-600 dark:text-primary-400" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-medium text-gray-900 dark:text-gray-100">Email</h4>
+                  <h4 className="font-medium text-gray-900 dark:text-gray-100">{t('ui.email')}</h4>
                   <a
                     href={`mailto:${contactInfo.email}`}
                     className="text-primary-600 dark:text-primary-400 hover:underline"
@@ -82,7 +81,7 @@ export default function Contact() {
                     <Phone className="text-primary-600 dark:text-primary-400" size={24} />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-900 dark:text-gray-100">Phone</h4>
+                        <h4 className="font-medium text-gray-900 dark:text-gray-100">{t('ui.phone')}</h4>
                     <a
                       href={`tel:${contactInfo.phone}`}
                       className="text-primary-600 dark:text-primary-400 hover:underline"
@@ -98,59 +97,30 @@ export default function Contact() {
                   <MapPin className="text-primary-600 dark:text-primary-400" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-medium text-gray-900 dark:text-gray-100">Location</h4>
+                        <h4 className="font-medium text-gray-900 dark:text-gray-100">{t('ui.location')}</h4>
                   <span className="text-gray-600 dark:text-gray-400">{contactInfo.location}</span>
                 </div>
               </div>
             </div>
 
-            {/* Social Links */}
-            <div>
-              <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-4">Follow Me</h4>
-              <div className="flex gap-4">
-                {contactInfo.github && (
-                  <a
-                    href={contactInfo.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                  >
-                    <Github className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400" size={24} />
-                  </a>
-                )}
-                {contactInfo.linkedin && (
-                  <a
-                    href={contactInfo.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                  >
-                    <Linkedin className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400" size={24} />
-                  </a>
-                )}
-                {contactInfo.twitter && (
-                  <a
-                    href={contactInfo.twitter}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                  >
-                    <Twitter className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400" size={24} />
-                  </a>
-                )}
-              </div>
+            
+
+            <div className="rounded-2xl border border-accent-200 bg-white p-6 shadow-lg">
+              <h3 className="text-xl font-bold text-primary-900">{t('ui.cvHubTitle')}</h3>
+              <p className="mt-2 mb-5 text-sm leading-relaxed text-gray-600">{t('ui.cvHubText')}</p>
+              <DownloadCvButton variant="primary" />
             </div>
           </div>
 
           {/* Contact Form */}
           <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg">
-            <h3 className="text-xl font-semibold mb-6">Send Me a Message</h3>
+            <h3 className="text-xl font-semibold mb-6">{t('ui.directContact')}</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Name *
+                    {t('ui.fullName')} *
                   </label>
                   <input
                     type="text"
@@ -165,7 +135,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Email *
+                    {t('ui.email')} *
                   </label>
                   <input
                     type="email"
@@ -181,8 +151,22 @@ export default function Contact() {
               </div>
 
               <div>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  {t('ui.phone')}
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-800 dark:text-gray-100 transition-all"
+                  placeholder="+966 ..."
+                />
+              </div>
+
+              <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Subject *
+                  {t('ui.consultationType')} *
                 </label>
                 <input
                   type="text"
@@ -192,13 +176,13 @@ export default function Contact() {
                   onChange={handleInputChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-800 dark:text-gray-100 transition-all"
-                  placeholder="What's this about?"
+                  placeholder={t('ui.consultationPlaceholder')}
                 />
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Message *
+                  {t('ui.message')} *
                 </label>
                 <textarea
                   id="message"

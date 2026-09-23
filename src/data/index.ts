@@ -1,224 +1,100 @@
 import { Project, Experience, Skill, Education, ContactInfo, PersonalInfo } from '@/types'
 
-/**
- * Personal information data
- * Update this with your actual information
- */
 export const personalInfo: PersonalInfo = {
-  name: 'Your Name',
-  title: 'Dedicated Educator & Teacher',
-  bio: 'Passionate educator with extensive experience in curriculum development, student engagement, and educational technology integration. Committed to fostering inclusive learning environments that inspire and empower students to reach their full potential.',
-  image: '/images/profile.jpg', // Add your profile image to public/images/
-  resume: '/resume.pdf' // Add your resume to public/
+  name: 'رشاد مانع',
+  title: 'مستشار وقيادي تنفيذي | إدارة وتخطيط استراتيجي | نظم معلومات وإحصاء | إدارة المستشفيات والعمليات',
+  bio: 'قيادي واستشاري إداري ذو مسيرة مهنية تتجاوز 30 عاماً في التخطيط الاستراتيجي، النظم المعلوماتية والإحصائية، الرقابة المالية والمحاسبية، وإدارة العمليات عبر القطاعات الحكومية، المنشآت الصحية، والمنظمات الدولية.',
+  image: '/images/profile-rashad-manea.png',
+  resume: '/cv-rashad-mane-ar.pdf',
 }
 
-/**
- * Contact information
- * Update with your actual contact details
- */
 export const contactInfo: ContactInfo = {
-  email: 'your.email@example.com',
-  phone: '+1 (555) 123-4567',
-  location: 'Your City, State',
-  linkedin: 'https://linkedin.com/in/yourprofile',
-  github: 'https://github.com/yourusername',
-  twitter: 'https://twitter.com/yourusername',
-  website: 'https://yourwebsite.com'
+  email: 'Rashadmane@gmail.com',
+  phone: '+966 59 534 2015 | +967 772 754 485',
+  location: 'الرياض، المملكة العربية السعودية',
+  linkedin: 'https://www.linkedin.com/in/rashad-manea-a7224b2b7/',
 }
 
-/**
- * Skills data
- * Add your teaching skills and educational competencies
- */
 export const skills: Skill[] = [
-  // Teaching & Pedagogy
-  { id: '1', name: 'Curriculum Development', level: 95, category: 'frontend' },
-  { id: '2', name: 'Lesson Planning', level: 90, category: 'frontend' },
-  { id: '3', name: 'Student Assessment', level: 85, category: 'frontend' },
-  { id: '4', name: 'Differentiated Instruction', level: 90, category: 'frontend' },
-  { id: '5', name: 'Classroom Management', level: 88, category: 'frontend' },
-  { id: '6', name: 'Educational Psychology', level: 80, category: 'frontend' },
-  
-  // Technology Integration
-  { id: '7', name: 'Educational Technology', level: 85, category: 'backend' },
-  { id: '8', name: 'Learning Management Systems', level: 80, category: 'backend' },
-  { id: '9', name: 'Digital Assessment Tools', level: 75, category: 'backend' },
-  { id: '10', name: 'Interactive Whiteboards', level: 82, category: 'backend' },
-  { id: '11', name: 'Video Conferencing', level: 90, category: 'backend' },
-  { id: '12', name: 'Educational Apps & Software', level: 78, category: 'backend' },
-  
-  // Subject Expertise
-  { id: '13', name: 'Mathematics', level: 95, category: 'database' },
-  { id: '14', name: 'Science', level: 85, category: 'database' },
-  { id: '15', name: 'English Language Arts', level: 80, category: 'database' },
-  
-  // Professional Skills
-  { id: '16', name: 'Communication', level: 95, category: 'tools' },
-  { id: '17', name: 'Collaboration', level: 90, category: 'tools' },
-  { id: '18', name: 'Professional Development', level: 85, category: 'tools' },
-  { id: '19', name: 'Data Analysis', level: 75, category: 'tools' },
+  { id: '1', name: 'التخطيط الاستراتيجي ومؤشرات الأداء (KPIs)', level: 98, category: 'frontend' },
+  { id: '2', name: 'نظم المعلومات وإدارة قواعد البيانات', level: 95, category: 'frontend' },
+  { id: '3', name: 'التحليل الإحصائي وصناعة القرار', level: 95, category: 'backend' },
+  { id: '4', name: 'الإدارة المالية والمحاسبية والموازنات', level: 92, category: 'backend' },
+  { id: '5', name: 'إدارة المستشفيات والمنشآت الصحية', level: 90, category: 'database' },
+  { id: '6', name: 'العلاقات الحكومية والامتثال الدولي (INGOs)', level: 94, category: 'database' },
+  { id: '7', name: 'تدريب المدربين وإعداد الحقائب (TOT)', level: 96, category: 'tools' },
+  { id: '8', name: 'إدارة العمليات وسلاسل الإمداد', level: 88, category: 'tools' },
 ]
 
-/**
- * Projects data - Educational Achievements & Initiatives
- * Showcase your teaching projects and educational contributions
- */
 export const projects: Project[] = [
   {
     id: '1',
-    title: 'STEM Curriculum Integration Project',
-    description: 'Developed and implemented an interdisciplinary STEM curriculum that increased student engagement by 40% and improved test scores across all grade levels.',
-    longDescription: 'A comprehensive curriculum project that integrated Science, Technology, Engineering, and Mathematics across multiple grade levels. Collaborated with fellow educators to create hands-on learning experiences that connected theoretical concepts to real-world applications.',
-    image: '/images/projects/stem-curriculum.jpg',
-    technologies: ['Curriculum Design', 'STEM Education', 'Project-Based Learning', 'Assessment Tools'],
-    liveUrl: 'https://your-teaching-portfolio.com/stem-project',
-    githubUrl: '', // Not applicable for teaching projects
-    featured: true,
-    category: 'web'
+    title: 'الاستشارات والتخطيط الاستراتيجي للمؤسسات',
+    description: 'تصميم الخطط الاستراتيجية والتشغيلية وربطها بالموازنات ومؤشرات الأداء لدعم النمو المؤسسي وصناعة القرار.',
+    longDescription: 'مساعدة القيادات على تحويل الأهداف الاستراتيجية إلى مبادرات قابلة للقياس والتنفيذ والمتابعة.',
+    image: '', technologies: ['التخطيط الاستراتيجي', 'KPIs', 'التطوير المؤسسي'], liveUrl: '', githubUrl: '', featured: true, category: 'other',
   },
   {
     id: '2',
-    title: 'Digital Literacy Program',
-    description: 'Created and led a school-wide digital literacy program, training 200+ students and 30+ faculty members in educational technology.',
-    longDescription: 'Designed and implemented a comprehensive digital literacy program that equipped students with essential 21st-century skills. Provided professional development workshops for colleagues and created resource materials.',
-    image: '/images/projects/digital-literacy.jpg',
-    technologies: ['EdTech', 'Professional Development', 'Training', 'Resource Creation'],
-    liveUrl: 'https://your-school-website.com/digital-literacy',
-    githubUrl: '',
-    featured: true,
-    category: 'web'
+    title: 'بناء وأتمتة النظم الإحصائية والمعلوماتية',
+    description: 'تطوير منظومات جمع وتحليل البيانات وإصدار التقارير الإحصائية والاستراتيجية لصناع القرار.',
+    longDescription: 'تأطير دورة البيانات من الجمع المركزي إلى التحليل والتقرير بما يرفع جودة المعلومات وسرعة الاستجابة.',
+    image: '', technologies: ['إدارة البيانات', 'التحليل الإحصائي', 'لوحات المتابعة'], liveUrl: '', githubUrl: '', featured: true, category: 'other',
   },
   {
     id: '3',
-    title: 'Student Mentorship Program',
-    description: 'Established a peer mentorship program that improved student retention rates by 25% and enhanced overall academic performance.',
-    longDescription: 'Developed and coordinated a comprehensive mentorship program pairing upperclassmen with underclassmen. Created training materials for mentors and tracking systems for progress monitoring.',
-    image: '/images/projects/mentorship.jpg',
-    technologies: ['Student Development', 'Program Management', 'Data Analysis', 'Collaboration'],
-    liveUrl: '',
-    githubUrl: '',
-    featured: false,
-    category: 'web'
+    title: 'الإشراف والتشغيل الإداري للمستشفيات',
+    description: 'قيادة العمليات الإدارية والمالية والتشغيلية للمنشآت الصحية ورفع كفاءة فرق العمل والموارد.',
+    longDescription: 'دعم الإدارة العليا في ضبط الموازنات، تنظيم العمليات، وتطوير بيئة تشغيلية مستدامة للمنشآت الصحية.',
+    image: '', technologies: ['إدارة المستشفيات', 'العمليات', 'الموازنات'], liveUrl: '', githubUrl: '', featured: false, category: 'other',
   },
   {
     id: '4',
-    title: 'Inclusive Classroom Initiative',
-    description: 'Designed and implemented inclusive teaching strategies that accommodated diverse learning styles and improved accessibility for all students.',
-    longDescription: 'Developed comprehensive inclusive education practices that ensured equitable learning opportunities for students with diverse backgrounds and abilities. Created resource guides and conducted workshops for fellow educators.',
-    image: '/images/projects/inclusive-education.jpg',
-    technologies: ['Inclusive Education', 'Differentiated Instruction', 'Universal Design', 'Special Education'],
-    liveUrl: '',
-    githubUrl: '',
-    featured: false,
-    category: 'web'
-  }
+    title: 'الامتثال والشراكات الحكومية للمنظمات غير الربحية',
+    description: 'إدارة العلاقات الحكومية وتأمين التراخيص وبناء قنوات التنسيق المؤسسي للمشاريع الإنسانية والتنموية.',
+    longDescription: 'خبرة عملية في التنسيق الدبلوماسي والمؤسسي مع الجهات الحكومية والمنظمات الدولية.',
+    image: '', technologies: ['الامتثال', 'العلاقات الحكومية', 'INGOs'], liveUrl: '', githubUrl: '', featured: false, category: 'other',
+  },
 ]
 
-/**
- * Work experience data - Teaching Experience
- * List your educational and teaching experience
- */
 export const experience: Experience[] = [
   {
-    id: '1',
-    company: 'Lincoln High School',
-    position: 'High School Mathematics Teacher',
-    startDate: '2022-08',
-    endDate: undefined, // Current position
-    description: 'Lead mathematics instructor responsible for teaching Algebra, Geometry, and Advanced Placement Calculus to students in grades 9-12.',
-    responsibilities: [
-      'Designed and implemented engaging lesson plans for 150+ students across multiple mathematics courses',
-      'Developed differentiated instruction strategies to accommodate diverse learning styles and abilities',
-      'Integrated educational technology tools to enhance student engagement and learning outcomes',
-      'Collaborated with department colleagues to align curriculum with state standards and best practices',
-      'Provided individualized support and tutoring to struggling students, improving pass rates by 30%',
-      'Mentored new teachers and student teachers in effective pedagogical practices'
-    ],
-    technologies: ['Algebra', 'Geometry', 'Calculus', 'Educational Technology', 'Google Classroom', 'Khan Academy'],
-    location: 'Springfield, IL',
-    type: 'full-time'
+    id: '1', company: 'المعهد الوطني للعلوم الإدارية - فرع إب', position: 'رئيس قسم نظم المعلومات والإحصاء', startDate: 'أغسطس 1992', endDate: undefined,
+    description: 'قيادة قسم النظم والإحصاء لأكثر من 30 عاماً والإشراف على فرق جمع وتحليل البيانات.',
+    responsibilities: ['أتمتة آليات جمع البيانات المركزية.', 'إصدار أكثر من 100 تقرير إحصائي وتحليلي لدعم صناع القرار.'],
+    technologies: ['النظم المعلوماتية', 'الإحصاء', 'التقارير الاستراتيجية'], location: 'إب، اليمن', type: 'full-time',
   },
   {
-    id: '2',
-    company: 'Roosevelt Middle School',
-    position: 'Middle School Science Teacher',
-    startDate: '2020-08',
-    endDate: '2022-06',
-    description: 'Taught physical science and earth science to 6th, 7th, and 8th grade students with focus on hands-on learning and scientific inquiry.',
-    responsibilities: [
-      'Developed and implemented inquiry-based science curriculum for 120+ middle school students',
-      'Organized and supervised science fair competitions, with 85% student participation rate',
-      'Created interdisciplinary projects connecting science concepts to real-world applications',
-      'Implemented laboratory safety protocols and supervised hands-on experiments',
-      'Collaborated with special education team to support students with diverse learning needs',
-      'Led professional development workshops on NGSS implementation'
-    ],
-    technologies: ['Physical Science', 'Earth Science', 'Lab Management', 'NGSS Standards', 'Scientific Method'],
-    location: 'Springfield, IL',
-    type: 'full-time'
+    id: '2', company: 'المعهد الوطني - فرع إب والإدارة العامة صنعاء', position: 'مدير إدارة التخطيط والمتابعة', startDate: 'فترة سابقة', endDate: 'فترة سابقة',
+    description: 'إدارة التخطيط المؤسسي ومتابعة الأداء وربط التنفيذ بالموازنات التقديرية.',
+    responsibilities: ['صياغة الخطط التشغيلية السنوية ومواءمتها مع الموازنات التقديرية.', 'تطبيق منظومة متابعة وتقييم الأداء المؤسسي (KPIs) لمعالجة الانحرافات التشغيلية.'],
+    technologies: ['التخطيط التشغيلي', 'الموازنات', 'KPIs'], location: 'إب وصنعاء، اليمن', type: 'full-time',
   },
   {
-    id: '3',
-    company: 'Greenwood Elementary School',
-    position: 'Elementary Education Teacher',
-    startDate: '2018-08',
-    endDate: '2020-06',
-    description: 'Fourth-grade classroom teacher responsible for comprehensive instruction across all core subjects with emphasis on literacy and numeracy development.',
-    responsibilities: [
-      'Provided comprehensive instruction in mathematics, language arts, science, and social studies',
-      'Implemented differentiated instruction strategies for students with varying ability levels',
-      'Developed and maintained positive relationships with students, parents, and colleagues',
-      'Used formative and summative assessments to track student progress and adjust instruction',
-      'Participated in grade-level team meetings and school improvement initiatives',
-      'Supervised student teachers and provided mentorship in classroom management'
-    ],
-    technologies: ['Elementary Curriculum', 'Literacy Development', 'Classroom Management', 'Parent Communication'],
-    location: 'Springfield, IL',
-    type: 'full-time'
-  }
+    id: '3', company: 'منظمة إنقاذ الطفولة الدولية Save the Children', position: 'مسؤول العلاقات الحكومية والامتثال', startDate: '+6 سنوات', endDate: 'فترة سابقة',
+    description: 'إدارة قنوات الاتصال والتنسيق الدبلوماسي والمؤسسي مع الوزارات والجهات التنظيمية.',
+    responsibilities: ['تأمين تراخيص المشاريع الإنسانية.', 'قيادة العلاقات الحكومية والامتثال المؤسسي للمنظمة.'],
+    technologies: ['العلاقات الحكومية', 'الامتثال الدولي', 'التنسيق المؤسسي'], location: 'اليمن', type: 'full-time',
+  },
+  {
+    id: '4', company: 'مستشفى دار الشفاء - إب', position: 'مدير عام مستشفى', startDate: 'فترة سابقة', endDate: 'فترة سابقة',
+    description: 'القيادة التشغيلية والمالية الشاملة للمستشفى وتوسعة مرافقه.',
+    responsibilities: ['إدارة فريق طبي وإداري يضم أكثر من 40 كادراً.', 'ضبط العمليات والموازنات والإشراف على التوسع التشغيلي.'],
+    technologies: ['إدارة المستشفيات', 'الإدارة المالية', 'العمليات'], location: 'إب، اليمن', type: 'full-time',
+  },
+  {
+    id: '5', company: 'المعهد الوطني للعلوم الإدارية', position: 'مدرب ومحاضر معتمد', startDate: 'برامج متعددة', endDate: 'برامج متعددة',
+    description: 'تصميم وتقديم حقائب المحاسبة المالية والمشتريات والتطوير الإداري.',
+    responsibilities: ['تدريب وتأهيل أكثر من 500 متدرب وكادر.', 'إعداد الحقائب التدريبية وتطوير البرامج المهنية.'],
+    technologies: ['المحاسبة المالية', 'المشتريات', 'التطوير الإداري'], location: 'اليمن', type: 'contract',
+  },
 ]
 
-/**
- * Education data - Academic Background & Certifications
- * Add your educational background and teaching certifications
- */
 export const education: Education[] = [
-  {
-    id: '1',
-    institution: 'State University',
-    degree: 'Master of Education',
-    field: 'Curriculum and Instruction',
-    startDate: '2019-08',
-    endDate: '2021-05',
-    gpa: '3.9/4.0',
-    description: 'Specialized in curriculum development and educational leadership with focus on differentiated instruction and assessment strategies.'
-  },
-  {
-    id: '2',
-    institution: 'State University',
-    degree: 'Bachelor of Science',
-    field: 'Mathematics Education',
-    startDate: '2015-08',
-    endDate: '2019-05',
-    gpa: '3.7/4.0',
-    description: 'Major in Mathematics with teaching certification. Completed student teaching at diverse school settings with exemplary evaluations.'
-  },
-  {
-    id: '3',
-    institution: 'State Department of Education',
-    degree: 'Teaching License',
-    field: 'Mathematics (Grades 6-12)',
-    startDate: '2019-05',
-    endDate: '2029-05',
-    description: 'Professional teaching license with endorsements in Mathematics and Educational Technology.'
-  },
-  {
-    id: '4',
-    institution: 'National Board for Professional Teaching Standards',
-    degree: 'National Board Certification',
-    field: 'Adolescence and Young Adulthood Mathematics',
-    startDate: '2023-01',
-    endDate: '2033-01',
-    description: 'Achieved National Board Certification demonstrating accomplished teaching practices and student impact.'
-  }
+  { id: '1', institution: 'مؤسسة تعليمية معتمدة', degree: 'دبلوم عالي بمستوى الماجستير', field: 'بتقدير ممتاز', startDate: '', endDate: '', description: 'تأهيل متقدم في الإدارة والقيادة.' },
+  { id: '2', institution: 'مؤسسة تعليمية معتمدة', degree: 'بكالوريوس', field: 'المحاسبة والعلوم المالية', startDate: '', endDate: '', description: 'تخصص في المحاسبة والعلوم المالية.' },
+  { id: '3', institution: 'مؤسسة تعليمية معتمدة', degree: 'دبلوم تخصصي', field: 'التسويق وإدارة الإنتاج', startDate: '', endDate: '', description: 'تخصص مهني في التسويق وإدارة الإنتاج.' },
+  { id: '4', institution: 'جمهورية العراق', degree: 'دبلوم العلوم التجارية والتسويق', field: 'العلوم التجارية والتسويق', startDate: '', endDate: '', description: 'دبلوم مهني في العلوم التجارية والتسويق.' },
+  { id: '5', institution: 'GIZ الألمانية', degree: 'شهادة الحوكمة الرشيدة', field: 'الحوكمة والامتثال', startDate: '', endDate: '', description: 'شهادة مهنية في مبادئ الحوكمة الرشيدة.' },
+  { id: '6', institution: 'برامج مهنية معتمدة', degree: 'شهادات مهنية', field: 'TOT و PCM/RBM وإدارة المستشفيات', startDate: '', endDate: '', description: 'شهادة تدريب المدربين، الإدارة القائمة على النتائج، وإدارة المستشفيات والمنشآت الصحية.' },
 ]

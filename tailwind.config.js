@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -9,16 +10,7 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+          50: '#f2f6fa', 100: '#e3ebf2', 200: '#c6d5e2', 300: '#9ab2c6', 400: '#668ba8', 500: '#3e6685', 600: '#2a4e6b', 700: '#1d3d59', 800: '#153149', 900: '#0f2942',
         },
         secondary: {
           50: '#f8fafc',
@@ -33,21 +25,12 @@ module.exports = {
           900: '#0f172a',
         },
         accent: {
-          50: '#fef7ff',
-          100: '#fce7ff',
-          200: '#f8d2ff',
-          300: '#f2b0ff',
-          400: '#e879ff',
-          500: '#d946ef',
-          600: '#c026d3',
-          700: '#a21caf',
-          800: '#86198f',
-          900: '#701a75',
+          50: '#fbfaf5', 100: '#f4efdf', 200: '#e7dcb9', 300: '#d4bd81', 400: '#b99a50', 500: '#9a7b38', 600: '#806329', 700: '#654c20', 800: '#4d391b', 900: '#382914',
         }
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Poppins', 'sans-serif'],
+        sans: ['Cairo', 'sans-serif'],
+        display: ['Cairo', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in',

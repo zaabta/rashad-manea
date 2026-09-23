@@ -1,10 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Menu, X, Download } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useTranslation } from '@/contexts/I18nContext'
-import { personalInfo } from '@/data'
 import LanguageSwitcher from './LanguageSwitcher'
+import DownloadCvButton from '@/components/ui/DownloadCvButton'
 
 /**
  * Header component with responsive navigation and i18n support
@@ -17,7 +17,7 @@ export default function Header() {
 
   // Navigation menu items with translations
   const navItems = [
-    { label: 'Home', href: '#home' },
+    { label: t('nav.home'), href: '#home' },
     { label: t('nav.about'), href: '#about' },
     { label: t('nav.skills'), href: '#skills' },
     { label: t('nav.projects'), href: '#projects' },
@@ -51,19 +51,19 @@ export default function Header() {
       <div className="container-max-width section-padding">
         <nav className="flex items-center justify-between py-4">
           {/* Logo/Name */}
-          <div className="flex items-center">
+          <div className="flex items-center flex-shrink-0">
             <h1 className="text-xl font-bold gradient-text">
-              {personalInfo.name}
+              {t('ui.name')}
             </h1>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center justify-end gap-4 lg:gap-5 flex-1 min-w-0">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 font-medium"
+                className="text-sm lg:text-base text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 font-medium whitespace-nowrap"
               >
                 {item.label}
               </a>
@@ -73,24 +73,14 @@ export default function Header() {
             <LanguageSwitcher />
             
             {/* Resume Download Button */}
-            {personalInfo.resume && (
-              <a
-                href={personalInfo.resume}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary flex items-center gap-2"
-              >
-                <Download size={16} />
-                Resume
-              </a>
-            )}
+            <DownloadCvButton variant="primary" className="shrink-0" />
           </div>
 
           {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={t('ui.toggleMenu')}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -117,18 +107,9 @@ export default function Header() {
               </div>
               
               {/* Mobile Resume Button */}
-              {personalInfo.resume && (
-                <a
-                  href={personalInfo.resume}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary flex items-center justify-center gap-2 mt-4"
-                  onClick={handleNavClick}
-                >
-                  <Download size={16} />
-                  Download Resume
-                </a>
-              )}
+              <div className="mt-4" onClick={handleNavClick}>
+                <DownloadCvButton variant="primary" className="w-full" />
+              </div>
             </div>
           </div>
         )}
