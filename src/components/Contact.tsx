@@ -15,6 +15,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     subject: '',
     message: ''
   })
@@ -29,11 +30,19 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically send the form data to your backend or email service
-    console.log('Form submitted:', formData)
-    alert(t('ui.thankYou'))
-    // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' })
+
+    const emailSubject = `${formData.subject || 'طلب استشارة'} - ${formData.name}`
+    const emailBody = [
+      `الاسم: ${formData.name}`,
+      `البريد الإلكتروني: ${formData.email}`,
+      `رقم الهاتف: ${formData.phone || 'غير مذكور'}`,
+      `نوع الاستشارة: ${formData.subject}`,
+      '',
+      'الرسالة:',
+      formData.message,
+    ].join('\\n')
+
+    window.location.href = `mailto:${contactInfo.email}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
   }
 
   return (
@@ -158,6 +167,7 @@ export default function Contact() {
                   type="tel"
                   id="phone"
                   name="phone"
+                  value={formData.phone}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-gray-800 dark:text-gray-100 transition-all"
                   placeholder="+966 ..."

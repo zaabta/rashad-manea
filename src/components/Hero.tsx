@@ -53,7 +53,7 @@ export default function Hero() {
                 <a href="#contact" className="btn-primary flex w-full items-center justify-center sm:w-64">
                   {t('hero.cta')}
                 </a>
-                <DownloadCvButton variant="secondary" className="w-full sm:w-64" />
+                <DownloadCvButton variant="secondary" className="h-full w-full sm:w-64" />
               </div>
 
               {/* Social Links */}
