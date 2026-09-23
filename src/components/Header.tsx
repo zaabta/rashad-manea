@@ -52,9 +52,9 @@ export default function Header() {
         <nav className="flex items-center justify-between py-4">
           {/* Logo/Name */}
           <div className="flex items-center flex-shrink-0">
-            <h1 className="text-xl font-bold gradient-text">
+            <div className="text-xl font-bold gradient-text" aria-label={t('ui.name')}>
               {t('ui.name')}
-            </h1>
+            </div>
           </div>
 
           {/* Desktop Navigation */}

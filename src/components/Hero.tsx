@@ -97,7 +97,7 @@ export default function Hero() {
             <div className="relative w-72 h-72 lg:w-[30rem] lg:h-[30rem] rounded-full overflow-hidden border-[12px] border-white shadow-2xl">
               <Image
                 src={personalInfo.image}
-                alt={t('ui.name')}
+                alt="رشاد مانع - مستشار وقيادي تنفيذي"
                 fill
                 priority
                 sizes="(max-width: 1024px) 18rem, 30rem"
